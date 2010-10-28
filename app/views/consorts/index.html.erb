@@ -1,0 +1,31 @@
+<h1>Currently There are <%= @consorts.count %> Consortiums / Testing Groups</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Active</th>
+    <th>Company</th>
+    <th>Notes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @consorts.each do |consort| %>
+  <tr>
+    <td><%= consort.name %></td>
+    <td><%= consort.active %></td>
+    <td><%= consort.company_id %></td>
+    <td><%= consort.notes %></td>
+    <td><%= link_to 'Show', consort %></td>
+    <td><%= link_to 'Add Companies to this Consort', consorts_path/add_company %></td>
+
+    <td><%= link_to 'Edit', edit_consort_path(consort) %></td>
+    <td><%= link_to 'Destroy', consort, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Consort', new_consort_path %>

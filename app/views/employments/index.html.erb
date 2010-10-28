@@ -1,0 +1,29 @@
+<h1>Listing employments</h1>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Person</th>
+    <th>Hired</th>
+    <th>Fired</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @employments.each do |employment| %>
+  <tr>
+    <td><%= employment.company_id %></td>
+    <td><%= employment.person_id %></td>
+    <td><%= employment.hired %></td>
+    <td><%= employment.fired %></td>
+    <td><%= link_to 'Show', employment %></td>
+    <td><%= link_to 'Edit', edit_employment_path(employment) %></td>
+    <td><%= link_to 'Destroy', employment, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Employment', new_employment_path %>

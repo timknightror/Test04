@@ -1,0 +1,55 @@
+<%= form_for(@person) do |f| %>
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@person.errors.count, "error") %> prohibited this person from being saved:</h2>
+
+      <ul>
+      <% @person.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<hr>
+<table>
+
+  <tr>
+    <td><b><%= f.label :lname, "Last Name" %></b></td>
+    <td><b><%= f.label :fname, "First Name" %></b></td>
+    <td><b><%= f.label :dob, "Date of Birth" %></b>
+  </tr>
+
+
+   <tr>
+    <td><%= f.text_field :lname %></td>
+    <td><%= f.text_field :fname %></td>
+    <td><%= f.date_select :dob,
+                      :start_year => Time.now.year - 85,
+                      :end_year => Time.now.year - 18 %></td></td>
+  </tr>
+
+   <tr>
+    <td><b><%= f.label :client %></b><%= f.check_box :client %></td>
+    <td><b><%= f.label :compcontact, "Company Contact" %></b><%= f.check_box :compcontact %></td>
+    <td><b><%= f.label :tech, "Technician" %><%= f.check_box :tech %></b></td>
+  </tr>
+
+</table>
+
+    <br />
+    <br />
+    <h3>Personal Address:</h3>
+
+     <% f.fields_for :addresses do |builder| %>
+     <%= render 'addresses/address', :f => builder %>
+
+
+   <% end %>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

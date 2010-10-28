@@ -1,0 +1,34 @@
+<hr>
+<table>
+
+  <tr>
+     <td><%= f.label :add1, "Address Line 1" %></td>
+     <td><%= f.label :add2, "Address Line 2" %></td>
+     <td></td>
+  </tr>
+
+  <tr>
+     <td><%= f.text_field :add1 %><br /></td>
+     <td><%= f.text_field :add2 %><br /></td>
+     <td></td>
+  </tr>
+
+  <tr>
+    <td><%= f.label :city, "City" %><br /></td>
+    <td><%= f.label :state, "State" %><br /></td>
+    <td><%= f.label :zip, "Zip" %><br /></td>
+  </tr>
+
+  <tr>
+    <td><%= f.text_field :city %><br /></td>
+    <td><%= f.text_field :state %><br /></td>
+    <td><%= f.text_field :zip %><br /></td>
+  </tr>
+
+  <tr>
+    <td><%= f.check_box :_destroy %> <%= f.label :_destroy, "Remove This Address" %></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+</table>

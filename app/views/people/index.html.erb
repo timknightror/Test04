@@ -1,0 +1,33 @@
+<h1>Listing <%=	 @people.count %> People</h1>
+
+<table>
+  <tr>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Dob</th>
+    <th>Client</th>
+    <th>Company Contact</th>
+    <th>Technician</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @people.each do |person| %>
+  <tr>
+    <td><%= person.lname %></td>
+    <td><%= person.fname %></td>
+    <td><%= person.dob %></td>
+    <td><%= person.client %></td>
+    <td><%= person.compcontact %></td>
+    <td><%= person.tech %></td>
+    <td><%= link_to 'Show', person %></td>
+    <td><%= link_to 'Edit', edit_person_path(person) %></td>
+    <td><%= link_to 'Destroy', person, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Person', new_person_path %>

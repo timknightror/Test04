@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:
+  <%= @company.name %></b>
+</p>
+
+<p>
+  <b>Notes:</b>
+  <%= @company.notes %>
+</p>
+
+ <ol>
+   <% for address in @company.addresses %>
+   <li><%= h address.add1 %>, <%=	address.city  %>, <%=	address.state  %>,  <%=	address.zip  %></li>
+   <% end %>
+ </ol>
+
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>

@@ -1,0 +1,44 @@
+<%= form_for(@consort) do |f| %>
+  <% if @consort.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@consort.errors.count, "error") %> prohibited this consort from being saved:</h2>
+
+      <ul>
+      <% @consort.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <table border="1" style="groove">
+
+      <tr>
+        <td><b><%= f.label :name, "Consortium Name" %></b></td>
+        <td><%= f.text_field :name %></td>
+
+      </tr>
+
+      <tr>
+        <td><b><%= f.label :active, "Consortium Status is Active" %></b></td>
+        <td><%= f.check_box :active %></td>
+
+      </tr>
+
+      <tr>
+        <td><b><%= f.label :notes, "Notes" %></b></td>
+        <td></td>
+
+      </tr>
+
+      <tr>
+        <td colspan="3"><%= f.text_area :notes, :rows => 3  %></td>
+      </tr>
+
+    </table>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

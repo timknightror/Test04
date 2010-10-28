@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  lname: MyString
+  fname: MyString
+  dob: 2010-10-21
+  client: false
+  compcontact: false
+  tech: false
+
+two:
+  lname: MyString
+  fname: MyString
+  dob: 2010-10-21
+  client: false
+  compcontact: false
+  tech: false

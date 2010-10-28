@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  company_id: 1
+  person_id: 1
+  hired: 2010-10-21
+  fired: 2010-10-21
+
+two:
+  company_id: 1
+  person_id: 1
+  hired: 2010-10-21
+  fired: 2010-10-21

@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  add1: MyString
+  add2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  type: 1
+  notes: MyText
+
+two:
+  add1: MyString
+  add2: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  type: 1
+  notes: MyText
